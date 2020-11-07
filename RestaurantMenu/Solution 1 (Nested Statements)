@@ -1,0 +1,77 @@
+# The use of numbers to select items is not necessary, it is just easy for beginners because there is less worry about inproper data
+
+# Invalid order flag, used to check if the user's order is proper and should be sent to the kitchen
+invalidOrder = False
+
+# Getting the user's input for their main meal choice
+if not invalidOrder:
+	mainChoice = input("Please pick the number of the main meal you would like:\n1. Chicken Parmesan\n2. Pizza\n3. Chicken Fingers\n")
+	if mainChoice == ("1"):
+		mainChoice = "Chicken Parmesan"
+		# If the user's input (mainChoice) is "1", change (mainChoice) to "Chicken Parmesan" so it can be output later
+		
+		customization = input("\nPlease select the sauce you would like from the following options:\n1. Marinara Sauce\n2. Alfredo Sauce\n")
+		if customization == ("1"):
+			customization = "Marinara sauce"
+		elif customization == ("2"):
+			customization = "Alfredo sauce"
+		else:
+			print("Invalid selection - please restart your order")
+			invalidOrder = True
+		# Change (customization) based on the user's input so it can be output later, invalid selections will void the order
+
+	elif mainChoice == ("2"):
+		mainChoice = "Pizza"
+		# If the user's input (mainChoice) is "2", change (mainChoice) to "Pizza" so it can be output later
+		
+		customization = input("\nPlease select the topping you would like from the following options:\n1. Pineapple\n2. Bacon\n3. Only Cheese\n")
+		if customization == ("1"):
+			customization = "pineapple"	
+		elif customization == ("2"):
+			customization = "bacon"
+		elif customization == ("3"):
+			customization = "only cheese"
+		else:
+			print("Invalid selection - please restart your order")
+			invalidOrder = True
+		# Change (customization) based on the user's input so it can be output later, invalid selections will void the order
+		
+	elif mainChoice == ("3"):
+		mainChoice = "Chicken Fingers"
+		# If the user's input (mainChoice) is "3", change (mainChoice) to "Chicken Fingers" so it can be output later
+		
+		customization = input("\nPlease select the sauce you would like from the following options:\n1. BBQ\n2. Honey Garlic\n3. Hot\n")
+		if customization == ("1"):
+			customization = "BBQ sauce"
+		elif customization == ("2"):
+			customization = "Honey Garlic sauce"
+		elif customization == ("3"):
+			customization = "hot sauce"
+		else:
+			print("Invalid selection - please restart your order")
+			invalidOrder = True
+		# Change (customization) based on the user's input so it can be output later, invalid selections will void the order
+		
+	else:
+		print("Invalid selection - please restart your order")
+		invalidOrder = True
+	
+	
+# Getting the user's input for their side choice
+if not invalidOrder:
+	sideChoice = input("\nPlease pick the number of the side you would like:\n1. Fries\n2. Mixed Vegetables\n3. Garden Salad\n")
+	if sideChoice == ("1"):
+		sideChoice = "Fries"
+	elif sideChoice == ("2"):
+		sideChoice = "Mixed Vegetables"
+	elif sideChoice == ("3"):
+		sideChoice = "a Garden Salad"
+	# Change (sideChoice) based on the user's input, so it can be output later
+	else:
+		print("Invalid selection - please restart your order")
+		invalidOrder = True
+
+
+# Taking the (mainChoice) variable, (customization) variable, and (sideChoice) variable, and printing outputting them in a sentence so long as the order is valid
+if not invalidOrder:
+	print("\nUser would like {0:s} served with {1:s} alongside {2:s}".format(mainChoice, customization, sideChoice))
